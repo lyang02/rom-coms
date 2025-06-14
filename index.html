@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DH187: Romantic Comedies Capstone</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    </style>
+</head>
+
+<body style="background-color: #fffdf9;">
+    <div class="side-navbar">
+        <a href="#intro" class="nav-square square1" data-label="Intro"></a>
+        <a href="#background" class="nav-square square2" data-label="Background"></a>
+        <a href="#methods" class="nav-square square3" data-label="Methodology"></a>
+        <a href="#settings" class="nav-square square4" data-label="Settings"></a>
+        <a href="#script" class="nav-square square5" data-label="Scripts"></a>
+        <a href="#reflection" class="nav-square square6" data-label="Reflection"></a>
+    </div>
+    <div id="title">
+        <div class="title-line">
+            <h1 style="color:#ed2875">MAKEOVERS</h1>
+        </div>
+        <div class="title-line">
+            <h1 style="color: #5dd8e1">MEET-CUTES</h1>
+        </div>
+        <div class="title-line" id="intro">
+            <h1 style="color:#ca58c1">AND MANHATTAN MEN</h1>
+        </div>
+    </div>
+    <div class="content-container">
+        <h2>Introduction</h2>
+        <p style="color:#ed2875"><b><i>**Warning: potential spoilers ahead!**</i></b></p>
+        <p>Girl is a magazine editor in a big city (probably New York). Boy works a nondescript office job for a big
+            firm. They have a fateful meet-cute, maybe they bump into each
+            other on a crowded sidewalk or get set
+            up by friends and instantly clash, and of course engage in playful banter. Sparks fly. Then, inevitably,
+            something goes wrong: a lie, a misunderstanding, or a fear of commitment. Cue the dramatic montage. But just
+            when all hope seems lost, boy has a revelation, makes a grand gesture, and they reunite for a happy ending.
+            <br><br>
+            Sound familiar?
+            <img src="graphics/lose_guy.png" style="margin-top: 8%; margin-left: auto; margin-right: auto; width: 40vw;"
+                alt="Scene from How to Lose a Guy in 10 Days">
+        <p style="color: #544d4a; margin-top: 2%; margin-bottom: -2.5%; text-align: center;"><i>How to Lose a Guy in 10
+                Days</i></p>
+
+        <p>
+            <br><br>
+            Were 2000's rom-coms really all like this or do we just joke about them? For many, these films help form
+            early
+            notions of romance, dating, and gender roles within relationships. This project explores how modern romantic
+            comedies depict romance and gender dynamics, and how those portrayals may shape viewers’ real-life
+            perceptions of love—particularly among girls and women,
+            who are often the target audience of rom-coms. Personally, I was raised in a traditional, conservative
+            household, yet I hold fairly contrasting opinions on relationships, marriage, and gender roles to my
+            parents, which I suspect is partially due to the American values and norms I was exposed to through 2000's
+            rom-coms. By analyzing the stories that rom-coms tell, I aim to better
+            understand the lasting impact that these lighthearted films can have on how we approach modern romance.
+        </p>
+    </div>
+    <div class="content-container" id="background">
+        <h2>Background</h2>
+        <h3>What is a modern rom-com?</h3>
+        <p>
+            “Neo-traditional” romantic comedies took hold after <i>When Harry Met Sally</i> came out in 1989 (nominated for
+            best original
+            screenplay at the Oscars). Many describe the era of modern rom-coms as having started in the 1980s, with
+            Oscar-winning films <i>Moonstruck</i> and
+            <i>When Harry Met Sally</i>, and continue into the present, with <i>Crazy Rich Asians</i> and <i>Anyone But
+                You</i> (though some also claim that the genre died after 2013)
+            <a href="https://www.cnn.com/2021/08/29/entertainment/romantic-comedy-evolution-trnd/index.html.">(Asmelash,
+                CNN)</a>.
+            <br><br>
+            Romantic comedies, or rom-coms, have long held a unique place in film, balancing humor with
+            heartfelt storytelling about love and relationships. The genre's roots trace back to the comedic and
+            romantic pursuits featured in Shakespeare’s plays and other literary classics, some of which modern rom-coms
+            are adapted from, such as <i>10 Things I Hate About You</i> (loosely based on <i>Taming of the Shrew</i>),
+            <i>Clueless</i> (loosely based on Jane Austen's <i>Emma</i>), and <i>She's the Man</i> (loosely inspired by
+            <i>Twelfth Night</i>), <a
+                href="https://www.cnn.com/2021/08/29/entertainment/romantic-comedy-evolution-trnd/index.html.">(Asmelash,
+                CNN)</a>. The rom-com genre evolved over time, creating more leading roles for women in film and
+            telling more nuanced women's stories. However, many rom-coms still continue to reflect and reinforce
+            problematic gender dynamics. Men are often
+            portrayed as the ones expected to take action or make grand gestures, while women—even those depicted as
+            strong and independent—are still passive in their romantic life. These women are ultimately left unfulfilled
+            without romantic validation despite their successes and end up waiting for the man to make a move and
+            proclaim his love.
+        </p>
+        <img src="graphics/harry.jpg" style="margin-top: 8%; margin-left: auto; margin-right: auto" alt="Two scenes from When Harry Met Sally where Harry is trying to get Sally to forgive him; in the first scene, 
+            he claims he's done making a fool out of himself and in the next scene he's singing to her over the phone">
+        <p style="color: #544d4a; margin-top: 2%; margin-bottom: 5%; text-align: center;">Harry trying to get Sally to
+            forgive him
+            in <i>When Harry Met Sally</i></p>
+        <p>
+            These stereotypical gender roles reflects the postfeminist era of rom-coms (roughly 2005–2011), during which
+            Chloe Angyal, a postdoctoral scholar, argues
+            feminist ideals were repackaged in a way that seemingly empowered women while simultaneously undercutting
+            their agency. She poses the argument in <a href="http://hdl.handle.net/1959.4/53737">her thesis on
+                postfeminist romantic comedies</a> that these films often perpetuate gender norms under the guise of
+            modernity ("deceptively
+            backward"),
+            using tropes like the “strong woman who still needs a man” or "a makeover for empowerment that aligns with
+            strict beauty standards" to reinforce traditional expectations. Ela Igrec, in <a
+                href="https://urn.nsk.hr/urn:nbn:hr:162:826674">their graduate thesis on
+                gender roles in romantic comedies</a>, identifies certain traits depicted in rom-coms that are feminine
+            vs. masculine. Some feminine traits include showing emotions, asking for advice, and wanting true love,
+            while masculine traits serve as a sharp contrast, including being unemotional, giving advice, and being more
+            interested in sex/one-night stands. However, it is interesting that despite this unemotional association,
+            Igrec found that the most repeated emotion for men was initiating the first kiss and telling their
+            partners "I love you" first, which requires significant emotional vulnerability.
+            <br><br>
+            Based on these widely recognized stereotypes and gendered tropes, I have selected a few to investigate,
+            including movie settings, who says "I love you" first and how love is expressed in these films, and other
+            exploratory
+            textual analysis.
+        </p>
+    </div>
+    <div class="content-container" id="methods">
+        <h2>Methodology</h2>
+        <p>2 main data sources:
+        <ul>
+            <li>&nbsp; Top 100 highest grossing domestic romantic comedies from <a
+                    href="https://www.boxofficemojo.com/genre/sg2111762689/?sort=grossToDate&ref_=bo_ge__resort#table">IMDBPro</a>
+            </li>
+            <li>&nbsp; Screenplays of romantic comedies</li>
+            <ul>
+                <li><i><a href=”https://www.dailyscript.com/scripts/whenharrymesally.pdf”>When Harry Met Sally
+                            (1989)</a></i></li>
+
+                <li><i><a href=”https://www.awesomefilm.com/script/tenthings_transcript.html”>10 Things I Hate About You
+                            (1999)</a></i></li>
+
+                <li><i><a href=”https://imsdb.com/scripts/Sex-and-the-City.html “>Sex and The City (2008)</a></i></li>
+                <li><i><a href=”https://d2bu9v0mnky9ur.cloudfront.net/academy2018/cra/screenplay/cra_wbfomat.pdf “>Crazy
+                            Rich Asians (2018)</a></i></li>
+            </ul>
+            </li>
+        </ul>
+        </p>
+        <h3>Highest Grossing Rom-Coms</h3>
+        <p>I manually collected movie settings using Wikipedia, IMDb, and other online sources. For movies that had key
+            settings in more than one place, I duplicated the row with the movie such that there were two entries with
+            two different locations. For fictional towns, I either tried to find the town it was based on or the actual
+            filming location if it was close to the fictional town setting. Additionally, some films had multiple
+            different settings, but I selected the setting(s) that were the most prominent and/or relevant to the story
+            itself.
+        </p>
+    </div>
+    <img src="graphics/map_data.png" style="width: 70vw; margin-top: 5%; margin-left: auto; margin-right: auto"
+        alt="Example of top 50 rom-coms dataset">
+    <p style="color: #544d4a; margin-top: 2%; text-align: center;"><i>Snippet of top 50 rom-coms dataset</i></p>
+    <div class="content-container" style="padding-top: 2%;">
+        <p>After finding all the locations for the top 50 movies, I uploaded the dataset to <a
+                href=”https://www.geoapify.com/tools/geocoding-online/”>Geoapify, an online geocoding tool</a>, to
+            retrieve
+            the latitude and longitude for each location. Additionally, I linked the movie posters from Wikipedia to
+            make the movies
+            more visually recognizable.
+        </p>
+        <h3>Scripts</h3>
+        <h4>Finding the data</h4>
+        <p>
+            When looking online for scripts, I tried to find ones for movies I’ve personally watched so I could roughly
+            verify if they seemed accurate. For example, the version of The Proposal on the IMDb script database was
+            clearly an earlier draft since the main male lead didn’t even have the correct name.
+            <br><br>
+            Most scripts were just over 100 pages and each one turned out to be messier and more inconsistent than I
+            expected, so I reduced my sample size since each script would now take more time to clean. I ended up
+            picking four movies that I’d seen and that had some influence on me. I was a bit bummed that some of the
+            classics didn’t have available or accurate
+            scripts, like <i>Clueless, The Proposal, 27 Dresses, How to Lose a Guy in 10 Days</i>, and <i>13 Going on
+                30</i>.
+            <br><br>
+            Cleaning the PDFs was tricky—editing them directly in Word or PDF editors didn’t give the control or
+            consistency I needed to preserve screenplay formatting. I first tried cleaning the PDFs in Adobe Acrobat to
+            make them easier for R to read, but it didn’t work very well. Text was randomly grouped into boxes and
+            were sort of floating on the page.
+        </p>
+        <img src="graphics/acrobat_boxes.png"
+            style="height: 60vh; margin-top: 8%; margin-left: auto; margin-right: auto" alt="adobe">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">Editing a screenplay PDF using Adobe Acrobat</p>
+        <p>
+            <br>
+            For scanned PDF documents, I tried various online OCR tools to clean up the file and make it accurate and
+            readable.
+            <img src="graphics/og_WHMS.png"
+                style="margin-top: 5%; margin-bottom: 5%; margin-left: auto; margin-right: auto"
+                alt="Example of scanned pdf script">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">Excerpt from original <i>When Harry Met Sally</i>
+            pdf</p>
+        <img src="graphics/ocr_word.png" style="margin-top: 8%; margin-left: auto; margin-right: auto"
+            alt="ocr word example">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">OCR export to .docx file type</i></p>
+        <img src="graphics/ocr_pdf.png" style="margin-top: 3%; margin-left: auto; margin-right: auto"
+            alt="ocr pdf example">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">OCR export to .pdf file type</i></p>
+        <p>
+            <br>
+            I ultimately discovered <a href="https://github.com/ocrmypdf/OCRmyPDF">OCRmyPDF</a> and tried performing the
+            OCR myself rather than using another existing online OCR tool, which performed much better.
+        </p>
+        <img src="graphics/ocr_tesseract.png" style="margin-top: 3%; margin-left: auto; margin-right: auto"
+            alt="running ocr tesseract in terminal">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">OCRmyPDF</i></p>
+        <h4>Structuring the data</h4>
+        <p>
+            In terms of structuring the data, I’m most comfortable working in R and was interested in learning more
+            about text mining with R. I remembered a data journalism article I read
+            a while ago that recommended the <a href="https://www.tidytextmining.com/tidytext">Text Mining with R</a>
+            book (which
+            is free online!), so I followed the tidytext approach to set up the scripts. To categorize text into
+            meaningful blocks, I looked at examples from other textual analysis projects, like using chapters to divide
+            novels.
+            Unfortunately, standard approaches didn’t quite apply due to the unique formatting of screenplays.
+            <br><br>
+            For example, some of the scripts I started working with: <i>10 Things I Hate About You, Sex and
+                the City</i>,
+            and <i>Crazy Rich Asians</i>, didn’t have clear scene markings like “Scene 1.”, so I couldn't directly
+            apply the chapter organization to scenes. Instead, I settled for the
+            next best approximations, the INT. and EXT. headings, which mark location and signal a scene change.
+            <br><br>
+            Below is an example of the different components of a screenplay:
+        </p>
+        <img src="graphics/example_script.png"
+            style="margin-top: 5%; margin-bottom: 5%; margin-left: auto; margin-right: auto"
+            alt="Example of script structure">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">Example of screenplay component structure from
+            <i>When Harry Met Sally</i>
+        </p>
+        <p><br>Within scenes, I tried to categorize lines using a variety of regex rules based on my observations:</p>
+        <ul>
+            <li>Character names appear in all caps before dialogue.</li>
+            <li> Dialogue appears after the character name.</li>
+            <li>Narrative action describes what’s happening in the scene when there’s no dialogue.</li>
+            <li>Other directions show up too, like (CONTINUED:), (MUSIC FADE IN), or (SUPERIMPOSE: LONDON).</li>
+        </ul>
+        <p>
+            <br>
+            However, I soon discovered that it wasn't as simple as matching all-caps; there were a wide range of
+            variations
+            like CARRIE (V.O.), NICK (CONT’D), CLERK #1, and (O.S.).
+            <br><br>
+            Due to vast exceptions and formatting quirks, my initial approach using pdftools and regex to extract
+            everything broke down quickly.
+            For example, <i>Crazy Rich Asians</i> has narrative lines with random
+            capitalized words, and characters speaking in different languages often had extra tags like “(in Mandarin;
+            subtitled),” which broke assumptions like “text after a character name = dialogue.” Additionally, some
+            scripts had extra scene numbers, like <i>Sex and the City</i>, but since these were inconsistent (and
+            usually redundant with INT./EXT.), I decided to remove scene numbers entirely for consistency across
+            scripts. Some scripts,
+            like Crazy Rich Asians, also had unconventional formatting (e.g. there’s a scene with a flurry of text
+            messages and heavier usage of dual
+            dialogue, making which made parsing more complex).
+            <br><br>
+            So I went back to the basics: how do humans visually read scripts and identify all these different
+            components?
+            Through indentation and line breaks.
+            Character names and their dialogue are often centered, while scene headings and action lines are not. I
+            checked if the raw data preserved the whitespace in R,
+            and it luckily, it did! So, I started counting the number of leading spaces to help distinguish block types,
+            which then made the
+            regex rules much more effective.
+            <br><br>
+            I eventually found <a href="https://www.writerduet.com/article/235-writersolo">WriterSolo, a free screenplay
+                editing program</a>, which had preset tools to help with screenplay indentation and
+            formatting and had toggle options for features like page numbers and scene numbers to easily add/remove them
+            entirely from the whole document. It also automatically added tags like (CONT’D) where needed, and was
+            overall incredibly effective for cleaning the scripts.
+            <img src="graphics/writersolo_toolbar.png"
+                style="margin-top: 5%; margin-bottom: 5%; margin-left: auto; margin-right: auto"
+                alt="Example of WriterSolo toolbar script">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">WriterSolo toolbar</p>
+        <p>Here’s the basic structure I worked toward:
+        </p>
+        <ul>
+            <li>Scene headings: typically marked by INT. or EXT.</li>
+            <li>Action</li>
+            <li>Character</li>
+            <li>Parentheses</li>
+            <li>Dialogue</li>
+        </ul>
+        <p>
+            <br>
+            In the end, it was a mix of manually cleaning scripts using WriterSolo and writing rules based on
+            indentation and formatting patterns. Along the way, I tried to visually verify the outputs as much as
+            possible.
+            I also had to set different whitespace thresholds for each script, despite using WriterSolo with preset
+            indentation for different text types. I found all the leading whitespace counts for each script, checked
+            what kinds of blocks were in each whitespace range, and then applied regex rules accordingly.
+        </p>
+        <img src="graphics/ws_lines.png"
+            style="height: 50vh; margin-top: 5%; margin-bottom: 2%; margin-left: auto; margin-right: auto"
+            alt="Example of whitespace count">
+        <p style="color: #544d4a; text-align: center;">Counting leading whitespace in <i>Crazy Rich Asians</i></p>
+        <img src="graphics/ws_count.png"
+            style="height: 65vh; margin-top: 5%; margin-bottom: 3%; margin-left: auto; margin-right: auto"
+            alt="whitespace table">
+        <p style="color: #544d4a; margin-top: 2%; text-align: center;">Whitespace count for an entire script</p>
+    </div>
+    <div class="content-container">
+        <p style="margin-top: 5%;">This approach
+            allowed me isolate certain groups of blocks first by whitespace (the way we would naturally read the
+            script), making distinctions blocks with similar characteristics (e.g. action vs. dialogue) much
+            easier since they had different leading whitespace and were not included in the same groups.</p>
+    </div>
+    <img src="graphics/ws_ranges.png"
+        style="width: 70vw; margin-top: 5%; margin-bottom: 1%; margin-left: auto; margin-right: auto"
+        alt="whitespace table">
+    <p style="color: #544d4a; margin-top: 2%; text-align: center;">Whitespace ranges with their classifications</p>
+    <div class="content-container">
+        <p style="margin-top: 5%;">Once I labelled every line, I collapsed the adjacent lines into one block (i.e.
+            multiple lines of adjacent
+            dialogue are joined into one row). Below is an example of the cleaned data structure:</p>
+    </div>
+    <img src="graphics/satc_clean.png"
+        style="height: 50vh; margin-top: 5%; margin-bottom: 1%; margin-left: auto; margin-right: auto"
+        alt="Example of WriterSolo toolbar script">
+    <p style="color: #544d4a; margin-top: 2%; text-align: center;">Example of cleaned <i>Sex and The City
+        </i>&nbsp;tibble</p>
+    </div>
+    <div class="content-container" id="settings">
+        <h2>Movie Settings: where do we find love?</h2>
+        <p style="margin-bottom: -2rem;">Many rom-coms seem to suggest that love is found in a big city, where there's
+            more opportunity to find
+            a soulmate (bigger pond, more fish, right?). But why are cities like New York and Paris so heavily
+            associated with romance? While I never internalized this concept as a personal must-have (I
+            didn't have any particular expectations when I moved to Los Angeles), these films still planted a subtle
+            association in
+            my mind between love and the American Dream. Just as big cities are seen as beacons of economic opportunity,
+            they also seem to promise romantic possibility and the American ideal of having it all: career, success,
+            and love.
+            There’s also something enticing about the idea of a chance encounter in a busy crowd, bumping into a
+            stranger on the subway, or locking eyes across a café. Maybe it’s the hustle and bustle of the
+            city that makes two people finding each other feel all the more special.
+            <br><br>
+            So, are most modern rom-coms really set in big cities, or is that just something we’ve come to assume?
+        </p>
+    </div>
+    <div class="map-layout">
+        <h3 class="heading">settings of top 50 highest grossing u.s. romantic comedies</h3>
+    </div>
+    <div class="map-layout">
+        <div id="map"></div>
+        <div id="details" class="info-panel">
+            <p>Drag and zoom on the map to explore! Hover over a point or arc to see popular rom-com settings.</p>
+        </div>
+    </div>
+    <div class="map-layout">
+        <h4 class="heading" style="margin-top: 2.5%; margin-bottom: -2.5%;">top 6 most common settings</h4>
+    </div>
+    <div class="map-layout">
+        <svg id="bar-chart" width="800" height="400"></svg>
+    </div>
+    <div class="content-container">
+        <p>Unsurprisingly, a vast majority of the top 50 highest grossing movies took place in New York (nearly half!).
+            Only the top 6 locations were included in this graph since all other locations only had one occurence. Safe
+            to say that rom-coms had at least some influence on tying large, metropolitan cities to love,
+            romance, and opportunity. In my opinion, I feel like New York and Paris are the cities most heavily
+            associated with romance, yet Paris doesn't show up in these rom-coms. It does show up in the next 50 movies
+            (like in
+            <i>Midnight in Paris</i>), but is largely not represented as a setting in U.S. rom-coms, so its connection
+            to love is likely derived from other forms or eras of media.
+        </p>
+    </div>
+    <div class="content-container" id="script">
+        <h2>Scripts</h2>
+        <p>
+            I initially started this project wanting to examine who says "I love you" first in rom-coms (the man or the
+            woman), to see if that was an expectation reinforced/exemplified in this genre. To begin, I first looked at
+            instances of "love" or its variants in the script using this regex rule:
+            <br>
+        </p>
+        <p style="text-align: center;">regex("\\blov(e|ed|es|ing)?\\b", ignore_case = TRUE)</p>
+        <br>
+        <p>
+            This rules finds the following words: love, loved, loves, loving
+            <br><br>
+            In <i>Sex and The City</i>, the word "love" and its variations appear <b
+                style="color:#fd7b0f; font-size:1.25rem">70</b> times!
+            Now, to look at who says it...
+            <svg id="love-bar" width="600" height="400"></svg>
+            The speakers of "love" were mostly women in <i>Sex and The City</i> (this could potentially be attributed to
+            the fact that women had the majority of lines in this movie).
+        </p>
+        <p style="margin-bottom: 8%;">Once I changed the regex to "I love," the number drastically dropped to 9
+            occurences, and within those 9, 4
+            of them are about things. The 5 occurences of "I love" directed towards a person were Miranda to Carrie (1),
+            Steve to Miranda (1), and then Samanta to Smith (3). The key resolution of the film, the relationship
+            between Carrie and Big, was done through love letters and didn't actually use the words "I love you" in some
+            form.
+            While this approach of counting word frequencies is interesting, I wanted to try capturing a bit more
+            information.
+            <br><br>The lines below represent the length of each script (with the total number of lines at the bottom).
+            The points along each line represent instances of characters (primarily main characters) expressing their
+            love for someone else. The toggle in the top left hides all the lines that are not directly between main
+            characters in a romantic manner. To see the actual line of dialogue, hover over the icon.
+        </p>
+        <label class="switch">
+            <input type="checkbox" id="toggle-hidden">
+            <span class="slider"></span>
+        </label>
+        <span id="span" style="margin-left: 10px;">Hide interactions not romantically or directly between main
+            characters</span>
+        <div id="love-lines">
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 961.1 735.62">
+                <circle id="WHMS1" cx="248.17" cy="102.04" r="12.6" fill="#ca58c1" />
+                <polygon id="WHMS2" points="262.72 97.4 233.62 97.4 248.17 122.6 262.72 97.4" fill="#38dbe7" /><text
+                    transform="translate(180.05 23.83)"
+                    font-family="BodoniSvtyTwoOSITCTT-Book, &apos;Bodoni 72 Oldstyle&apos;" font-size="28">
+                    <tspan x="0" y="0">When Harry </tspan>
+                    <tspan x="20.23" y="33.6">Met Sally</tspan>
+                </text><text transform="translate(187.28 723.78)"
+                    font-family="AmericanTypewriter, &apos;American Typewriter&apos;" font-size="24">
+                    <tspan x="0" y="0">2942 lines</tspan>
+                </text>
+                <line x1="248.17" y1="103.57" x2="248.17" y2="679.57" fill="none" stroke="#333" stroke-linecap="round"
+                    stroke-miterlimit="10" stroke-width="1.5" /><text transform="translate(639.44 26.91)"
+                    font-family="BodoniSvtyTwoOSITCTT-Book, &apos;Bodoni 72 Oldstyle&apos;" font-size="28">
+                    <tspan x="0" y="0">Sex and </tspan>
+                    <tspan x="-2.59" y="33.6">The City</tspan>
+                </text><text transform="translate(623.06 726.86)"
+                    font-family="AmericanTypewriter, &apos;American Typewriter&apos;" font-size="24">
+                    <tspan x="0" y="0" letter-spacing="-.05em">4</tspan>
+                    <tspan x="14.21" y="0" letter-spacing="-.07em">1</tspan>
+                    <tspan x="27.89" y="0" letter-spacing="0em">50 lines</tspan>
+                </text>
+                <line x1="682.6" y1="103.86" x2="682.6" y2="679.86" fill="none" stroke="#333" stroke-linecap="round"
+                    stroke-miterlimit="10" stroke-width="1.5" /><text transform="translate(376.29 26.91)"
+                    font-family="BodoniSvtyTwoOSITCTT-Book, &apos;Bodoni 72 Oldstyle&apos;" font-size="28">
+                    <tspan x="0" y="0">10 Things I Hate </tspan>
+                    <tspan x="32.03" y="33.6">About You</tspan>
+                </text><text transform="translate(404.83 726.86)"
+                    font-family="AmericanTypewriter, &apos;American Typewriter&apos;" font-size="24">
+                    <tspan x="0" y="0">2586 lines</tspan>
+                </text>
+                <line x1="465.72" y1="106.15" x2="465.72" y2="682.15" fill="none" stroke="#333" stroke-linecap="round"
+                    stroke-miterlimit="10" stroke-width="1.5" /><text transform="translate(840.28 26.91)"
+                    font-family="BodoniSvtyTwoOSITCTT-Book, &apos;Bodoni 72 Oldstyle&apos;" font-size="28">
+                    <tspan x="0" y="0">Crazy Rich </tspan>
+                    <tspan x="25.45" y="33.6">Asians</tspan>
+                </text><text transform="translate(839.32 726.86)"
+                    font-family="AmericanTypewriter, &apos;American Typewriter&apos;" font-size="24">
+                    <tspan x="0" y="0">3260 lines</tspan>
+                </text>
+                <line x1="900.21" y1="103.86" x2="900.21" y2="679.86" fill="none" stroke="#333" stroke-linecap="round"
+                    stroke-miterlimit="10" stroke-width="1.5" /><text id="Female_Male"
+                    transform="translate(33.94 337.35)"
+                    font-family="AmericanTypewriter, &apos;American Typewriter&apos;" font-size="24">
+                    <tspan x="0" y="0" letter-spacing="-.02em">F</tspan>
+                    <tspan x="14.45" y="0">emale</tspan>
+                    <tspan x="0" y="33">Male</tspan>
+                </text><text transform="translate(9.39 298.18)"
+                    font-family="AmericanTypewriter, &apos;American Typewriter&apos;" font-size="24">
+                    <tspan x="0" y="0">Spea</tspan>
+                    <tspan x="55.46" y="0" letter-spacing="-.02em">k</tspan>
+                    <tspan x="69.94" y="0">er:</tspan>
+                </text>
+                <circle id="_Key_Female_" cx="11.31" cy="328.27" r="9.99" fill="#ca58c1" />
+                <circle id="SATC1" cx="682.6" cy="130.86" r="12.6" fill="#ca58c1" />
+                <circle id="SATC4" cx="682.6" cy="492.85" r="12.6" fill="#ca58c1" />
+                <circle id="SATC5" cx="682.6" cy="621.98" r="12.6" fill="#ca58c1" />
+                <circle id="CRA3" cx="900.21" cy="654.34" r="12.6" fill="#ca58c1" />
+                <polygon id="WHMS5" points="262.72 193.71 233.62 193.71 248.17 218.91 262.72 193.71" fill="#38dbe7" />
+                <polygon id="_Key_Male_" points="22.61 352.64 0 352.64 11.31 372.22 22.61 352.64" fill="#38dbe7" />
+                <circle id="WHMS3" cx="248.17" cy="111.47" r="12.6" fill="#ca58c1" />
+                <polygon id="WHMS7" points="262.72 637.27 233.62 637.27 248.17 662.47 262.72 637.27" fill="#38dbe7" />
+                <polygon id="WHMS8" points="262.72 643.96 233.62 643.96 248.17 669.16 262.72 643.96" fill="#38dbe7" />
+                <polygon id="WHMS9" points="262.72 662.47 233.62 662.47 248.17 687.67 262.72 662.47" fill="#38dbe7" />
+                <polygon id="WHMS4" points="262.72 107.32 233.62 107.32 248.17 132.52 262.72 107.32" fill="#38dbe7" />
+                <polygon id="SATC2" points="697.15 211.84 668.05 211.84 682.6 237.04 697.15 211.84" fill="#38dbe7" />
+                <polygon id="SATC3" points="697.15 290.67 668.05 290.67 682.6 315.87 697.15 290.67" fill="#38dbe7" />
+                <polygon id="SATC6" points="697.15 661.52 668.05 661.52 682.6 686.72 697.15 661.52" fill="#38dbe7" />
+                <polygon id="CRA1" points="914.76 294.88 885.66 294.88 900.21 320.08 914.76 294.88" fill="#38dbe7" />
+                <polygon id="CRA2" points="914.76 446.8 885.66 446.8 900.21 472 914.76 446.8" fill="#38dbe7" />
+                <polygon id="CRA4" points="914.76 669.15 885.66 669.15 900.21 694.35 914.76 669.15" fill="#38dbe7" />
+                <circle id="CRA5" cx="900.21" cy="682.26" r="12.6" fill="#ca58c1" />
+                <circle id="WHMS6" cx="248.17" cy="209.15" r="12.6" fill="#ca58c1" />
+            </svg>
+        </div>
+        <p><i><br><br>
+            10 Things I Hate About You</i> actually didn't have any instances of characters directly expressing love
+            to one another, which makes some sense given that it is film about teenagers just getting to know each
+            other. While I expected most of the occurences of expressions of love to take place near the end of the
+            movie (closer to the bottom of the line), it was actually fairly spread out. However, when the toggle is
+            activated, there is consistently a love confession at the end of the movie (all by the men first).</p>
+        <p>
+            For more broad textual analysis, I also found the most commonly used words in dialogue by sex, only using
+            the main characters (determined by how many lines they had, which varied by script).
+        </p>
+        <h3 class="heading">most frequent words spoken by sex</h3>
+        <select id="sort-mode">
+            <option value="total">Total words</option>
+            <option value="shared">Shared words</option>
+            <option value="unique">Unique words</option>
+        </select>
+    </div>
+    <div id="top-words">
+        <svg id="top-words-bars"></svg>
+    </div>
+    <div class="content-container">
+        <p>Common shared high-frequency words include "love," "sex," and "feel," which I didn't expect. Given rom-com
+            tropes, I assumed "love" would be a more female-dominant word, while "sex" would
+            be more male-dominant. However, since I am working with only 4 scripts, it is relatively easy to guess
+            where the word usage comes from. For instance, male usage of "sex" can be like attributed to Harry from
+            <i>When Harry Met
+                Sally</i> and Steve from <i>Sex and The City</i>, while female usage can be attributed to most of the
+            female characters in <i>Sex and The City</i>. 
+            <br><br>
+            The frequencies between shared words are fairly comparable. Some words, like "friends" and "sex" saw slightly higher frequencies in male speakers, and words like "day"
+            and "home" saw higher frequencies in female speakers. The unique words reveal some disinctions between the
+            sexes, with females more frequently saying things like "married," "family," and "wedding" and males more
+            frequently saying "date," "attractive," and "baby." The unique words seem to align with the gender roles and
+            traits previously discussed, where women are more interested in finding true love and starting a family,
+            while men are more interested in casual dating and sex.
+        </p>
+    </div>
+    <div class="content-container" id="reflection">
+        <h2>Reflection</h2>
+        <p>A major limitation with this project was the number of rom-com scripts I was able to find and clean. Since
+            the process was rather intensive, the findings are not particularly representative of the modern rom-com
+            genre as a whole as I had originally intended (though I tried to select one film from every decade).
+            With more time, I would've loved to analyze the scripts using bigrams and trigrams, and explore topics like
+            infidelity, casual sex, and apologies. Another approach I would've liked to explore would be using Natural
+            Language Processing (NLP) to conduct more extensive textual analysis, like sentiment analysis and finding
+            the grand love "confession" at the end of the movie beyond just searching for the word "love."
+        </p>
+        <p>
+            Overall, I learned copious new techniques and tools through this project, and I have a newfound appreciation
+            for rom-coms through conducting my literature review. It's easy to write off the rom-com genre as cliché,
+            unrealistic, and reinforcing outdated gender roles, but I still find that there is still a lot of value that
+            comes from these films.
+            <br><br>
+            Admittedly, a widely recognized criticism of romantic comedies is their overwhemlingly white,
+            heternormative, and
+            formulaic stories, and as such the genre is dismissed as predictable and culturally shallow. Yet, as Kyle
+            Stevens argues <a href="https://doi.org/10.1080/17400309.2019.1664059"></a>in his article about romantic
+            comedies from a film analysis perspective</a>, the very
+            predictability of rom-coms can be a virtue—offering comfort, structure, and space for emotional
+            engagement. Similarly, Celestino Deleyto, a scholar of film and media, points out in <a
+                href="https://www.jprstudies.org/2011/10/the-comic-the-serious-and-the-middle-desire-and-space-in-contemporary-film-romantic-comedy-by-celestino-deleyto/">his
+                article on desire and space in contemporary film</a>, that romantic comedies,
+            despite their conventions, reflect and negotiate contemporary social desires and tensions. Rather than
+            dismissing the genre outright, it’s worth considering how these films can both reinforce and challenge
+            cultural norms, and how watching them critically can spark meaningful reflection on love, identity, and
+            representation. I encourage everyone, rom-com fans or not, to engage with the world around them in this manner, with a
+            critical and open mind.
+        </p>
+        <p id="footer"><br><br><br>
+            By L Yang<br>UCLA Digital Humanities Capstone</p>
+    </div>
+
+    <script src="js/hearts.js"></script>
+    <script src="js/love_bars.js"></script>
+    <script src="js/map.js" defer></script>
+    <script src="js/top_words.js" defer></script>
+    <script src="js/love_lines.js" defer></script>
+</body>
+
+</html>
